@@ -1,0 +1,50 @@
+{
+  //"react-app",
+  "extends": [ "airbnb-base"],
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true,
+    "node": true,
+    "jquery": true
+  },
+
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parserOptions": {
+    "ecmaFeatures":{
+      "jsx":true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+    //   "parser": "babel-eslint"
+  },
+  "plugins": ["prettier", "react", "babel"],
+  "rules": {
+    "indent": ["error", 2],
+    "no-unused-vars": ["error", { "caughtErrorsIgnorePattern": "^ignore" }],
+    "react/jsx-uses-react": 1,
+    "react/jsx-uses-vars": "error",
+    "linebreak-style": ["error", "windows"],
+   "quotes": "off",
+    "semi": [2, "always"],
+    "no-console": "warn",
+    "no-plusplus": "warn",
+    "max-len": ["error", 150, { "ignoreUrls": true }],
+    "no-alert": "warn",
+    "no-tabs": "warn",
+    "no-empty": 0,
+    "no-empty-class": 0,
+    "no-confusing-arrow": ["error", {"allowParens": true}],
+    "block-scoped-var": 0,
+    "babel/new-cap": 1,
+    "babel/camelcase": 1,
+    "babel/no-invalid-this": 1,
+    "babel/object-curly-spacing": 1,
+    "babel/semi": 1,
+    "babel/no-unused-expressions": 1,
+    "babel/valid-typeof": 1
+  }
+}

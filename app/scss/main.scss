@@ -1,0 +1,81 @@
+@import "var";
+
+// эти свойства по default
+*::input-placeholder {
+  color: $placeholdercolortext;
+  opacity: 1;
+}
+
+*::placeholder {
+  color: $placeholdercolortext;
+  opacity: 1;
+}
+
+::placeholder {
+  color: $placeholdercolortext;
+}
+
+::selection {
+  color: $white_color;
+  background-color: $accent_color;
+}
+
+@import "fonts";
+
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+
+  /* height: 100%; */
+  font-size: $body_fontsize;
+  line-height: $body_lineheight;
+  backface-visibility: hidden;
+
+  /* overflow-x: hidden; */
+}
+
+body {
+  position: relative;
+  overflow-x: hidden;
+  min-width: 320px;
+  font-family: $default-font;
+  font-size: $body_fontsize;
+  line-height: $body_lineheight;
+  color: $body_color_text;
+  opacity: 1;
+
+  input,
+  textarea {
+    outline: none;
+    border: #666666 1px solid;
+
+    &:required:valid {
+      border-color: #008000;
+    }
+
+    &:focus:required:invalid {
+      border-color: #ff0000;
+    }
+  }
+}
+
+.img-responsive {
+  display: block;
+  height: auto;
+  max-width: 100%;
+
+  &.img-width {
+    width: 100%;
+  }
+}
+
+.container {
+  border: 1px solid #ff0000;
+  min-height: 230px;
+  background-color: #008000;
+}
+
+@import "header";
+@import "allstyle";
+@import "media"; // Always at the en
