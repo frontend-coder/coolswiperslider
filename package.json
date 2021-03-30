@@ -54,10 +54,14 @@
     "stylelint-declaration-block-no-ignored-properties": "^2.3.0",
     "stylelint-order": "^4.1.0",
     "stylelint-prettier": "^1.1.2",
-    "stylelint-scss": "^3.18.0"
+    "stylelint-scss": "^3.18.0",
+    "webpack-stream": "^6.1.2"
   },
   "dependencies": {
     "browserslist": "^4.15.0",
-    "caniuse-lite": "^1.0.30001165"
+    "caniuse-lite": "^1.0.30001165",
+    "gsap": "^3.6.1",
+    "micromodal": "^0.4.6",
+    "swiper": "^6.5.1"
   }
 }

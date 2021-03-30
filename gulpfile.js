@@ -5,6 +5,8 @@ const { src, dest, parallel, series, watch  } = require('gulp');
 const concat                                  = require('gulp-concat');
 let uglify                                    = require('gulp-uglify-es').default;
 const rigger                                  = require('gulp-rigger');
+const webpack = require('webpack-stream');
+
 
 const sass                                    = require('gulp-sass');
 const autoprefixer                            = require('gulp-autoprefixer');
@@ -62,20 +64,32 @@ function browsersync() {
 	})
 }
 
-function scripts() {
-	return src([
-	'app/libs/plugins/jquery.min.js',
-//'app/libs/plugins/l2id.min.js',
 
-		'app/libs/common.js'
-	])
-		.pipe(strip())
-		.pipe(rigger())
-		.pipe(concat('scripts.min.js'))
-		.pipe(uglify())
-		.pipe(dest('app/js/'))
-		.pipe(browserSync.stream())
+function scripts() {
+  return src('common.js')
+    .pipe(
+			webpack({
+				mode: 'production',
+				performance: { hints: false },
+			//	devtool: 'source-map',
+
+			
+			}))
+    .on('error', function handleError() {
+      this.emit('end');
+    })
+    .pipe(rename('scripts.min.js'))
+    .pipe(dest('app/js'))
+    .pipe(browserSync.stream());
 }
+
+
+
+
+
+
+
+
 
 function images() {
 	return src('app/img/**/*')
